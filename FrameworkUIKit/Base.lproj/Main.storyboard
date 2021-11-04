@@ -51,8 +51,14 @@
                                             <action selector="changeDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="vmq-DL-hhX"/>
                                         </connections>
                                     </datePicker>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="980-H7-m1w">
+                                        <rect key="frame" x="47" y="519" width="320" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="gdp-lM-2sD" firstAttribute="top" secondItem="980-H7-m1w" secondAttribute="bottom" constant="73" id="0RX-UL-XTA"/>
                                     <constraint firstAttribute="bottom" secondItem="gdp-lM-2sD" secondAttribute="bottom" constant="958" id="1XU-vc-3Rg"/>
                                     <constraint firstItem="raQ-l1-BN9" firstAttribute="leading" secondItem="vRg-5v-8Sn" secondAttribute="leading" constant="17" id="3UI-VM-67J"/>
                                     <constraint firstItem="raQ-l1-BN9" firstAttribute="leading" secondItem="RCc-Kd-qKZ" secondAttribute="leading" id="99h-1e-4eh"/>
@@ -60,10 +66,13 @@
                                     <constraint firstItem="nmh-Dc-jE7" firstAttribute="top" secondItem="raQ-l1-BN9" secondAttribute="bottom" constant="102" id="FCM-Nh-A2m"/>
                                     <constraint firstItem="raQ-l1-BN9" firstAttribute="leading" secondItem="nmh-Dc-jE7" secondAttribute="leading" id="JMM-xq-pXi"/>
                                     <constraint firstAttribute="trailing" secondItem="RCc-Kd-qKZ" secondAttribute="trailing" constant="16" id="LC7-J4-XZZ"/>
+                                    <constraint firstItem="980-H7-m1w" firstAttribute="leading" secondItem="Ey8-L0-ghx" secondAttribute="leading" constant="47" id="OCm-Zi-ekf"/>
                                     <constraint firstItem="raQ-l1-BN9" firstAttribute="top" secondItem="vRg-5v-8Sn" secondAttribute="top" constant="119" id="Q1p-ka-TQS"/>
                                     <constraint firstItem="vRg-5v-8Sn" firstAttribute="trailing" secondItem="RCc-Kd-qKZ" secondAttribute="trailing" constant="16" id="Ql0-Ff-PDJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="980-H7-m1w" secondAttribute="trailing" constant="47" id="ViO-pp-FCW"/>
                                     <constraint firstItem="raQ-l1-BN9" firstAttribute="trailing" secondItem="RCc-Kd-qKZ" secondAttribute="trailing" constant="-22" id="fIq-cT-1Hd"/>
                                     <constraint firstItem="gdp-lM-2sD" firstAttribute="centerX" secondItem="Ey8-L0-ghx" secondAttribute="centerX" id="k70-xd-vgu"/>
+                                    <constraint firstItem="980-H7-m1w" firstAttribute="top" secondItem="RCc-Kd-qKZ" secondAttribute="bottom" constant="94" id="kwd-v6-eTK"/>
                                     <constraint firstItem="RCc-Kd-qKZ" firstAttribute="top" secondItem="nmh-Dc-jE7" secondAttribute="bottom" constant="123" id="na9-zb-Kca"/>
                                     <constraint firstItem="raQ-l1-BN9" firstAttribute="trailing" secondItem="nmh-Dc-jE7" secondAttribute="trailing" id="rcg-SH-T4M"/>
                                 </constraints>
@@ -86,6 +95,7 @@
                         <outlet property="label" destination="nmh-Dc-jE7" id="1gL-7b-yKt"/>
                         <outlet property="segmentedControl" destination="raQ-l1-BN9" id="obL-au-vEa"/>
                         <outlet property="slider" destination="RCc-Kd-qKZ" id="Dft-tp-HbT"/>
+                        <outlet property="textField" destination="980-H7-m1w" id="C9J-xj-KwQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
