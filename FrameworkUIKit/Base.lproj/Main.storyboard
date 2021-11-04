@@ -13,46 +13,66 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FrameworkUIKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="raQ-l1-BN9">
-                                <rect key="frame" x="16" y="104" width="382" height="32"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <connections>
-                                    <action selector="checkedFirst:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vk4-Ce-cnw"/>
-                                    <action selector="checkedSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="RUa-5i-8pO"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmh-Dc-jE7">
-                                <rect key="frame" x="16" y="287" width="382" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RCc-Kd-qKZ">
-                                <rect key="frame" x="14" y="358" width="386" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="iUc-zG-1ot"/>
-                                </connections>
-                            </slider>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ey8-L0-ghx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmh-Dc-jE7">
+                                        <rect key="frame" x="17" y="252" width="359" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RCc-Kd-qKZ">
+                                        <rect key="frame" x="15" y="396" width="385" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="mA9-V7-9Us"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="iUc-zG-1ot"/>
+                                        </connections>
+                                    </slider>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="raQ-l1-BN9">
+                                        <rect key="frame" x="17" y="119" width="359" height="32"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="checkedFirst:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vk4-Ce-cnw"/>
+                                            <action selector="checkedSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="RUa-5i-8pO"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="raQ-l1-BN9" firstAttribute="leading" secondItem="vRg-5v-8Sn" secondAttribute="leading" constant="17" id="3UI-VM-67J"/>
+                                    <constraint firstItem="raQ-l1-BN9" firstAttribute="leading" secondItem="RCc-Kd-qKZ" secondAttribute="leading" id="99h-1e-4eh"/>
+                                    <constraint firstItem="nmh-Dc-jE7" firstAttribute="top" secondItem="raQ-l1-BN9" secondAttribute="bottom" constant="102" id="FCM-Nh-A2m"/>
+                                    <constraint firstItem="raQ-l1-BN9" firstAttribute="leading" secondItem="nmh-Dc-jE7" secondAttribute="leading" id="JMM-xq-pXi"/>
+                                    <constraint firstAttribute="trailing" secondItem="RCc-Kd-qKZ" secondAttribute="trailing" constant="16" id="LC7-J4-XZZ"/>
+                                    <constraint firstItem="raQ-l1-BN9" firstAttribute="top" secondItem="vRg-5v-8Sn" secondAttribute="top" constant="119" id="Q1p-ka-TQS"/>
+                                    <constraint firstItem="vRg-5v-8Sn" firstAttribute="trailing" secondItem="RCc-Kd-qKZ" secondAttribute="trailing" constant="16" id="Ql0-Ff-PDJ"/>
+                                    <constraint firstItem="raQ-l1-BN9" firstAttribute="trailing" secondItem="RCc-Kd-qKZ" secondAttribute="trailing" constant="-22" id="fIq-cT-1Hd"/>
+                                    <constraint firstItem="RCc-Kd-qKZ" firstAttribute="top" secondItem="nmh-Dc-jE7" secondAttribute="bottom" constant="123" id="na9-zb-Kca"/>
+                                    <constraint firstAttribute="bottom" secondItem="RCc-Kd-qKZ" secondAttribute="bottom" constant="475" id="r6S-q8-rIc"/>
+                                    <constraint firstItem="raQ-l1-BN9" firstAttribute="trailing" secondItem="nmh-Dc-jE7" secondAttribute="trailing" id="rcg-SH-T4M"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="5e0-0Y-seI"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="vRg-5v-8Sn"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="nmh-Dc-jE7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DUA-ln-1RD"/>
-                            <constraint firstItem="raQ-l1-BN9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JKR-ia-YK0"/>
-                            <constraint firstItem="nmh-Dc-jE7" firstAttribute="top" secondItem="raQ-l1-BN9" secondAttribute="bottom" constant="152" id="WuP-1K-C2M"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nmh-Dc-jE7" secondAttribute="trailing" constant="16" id="c6q-OL-E67"/>
-                            <constraint firstItem="nmh-Dc-jE7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kyL-2t-urV"/>
-                            <constraint firstItem="raQ-l1-BN9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="uar-hM-4hY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="raQ-l1-BN9" secondAttribute="trailing" constant="16" id="waN-Q7-tiK"/>
+                            <constraint firstItem="Ey8-L0-ghx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IYs-Yy-Val"/>
+                            <constraint firstItem="Ey8-L0-ghx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Kpr-fb-kFA"/>
+                            <constraint firstItem="Ey8-L0-ghx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qt8-cx-F5h"/>
+                            <constraint firstAttribute="bottom" secondItem="Ey8-L0-ghx" secondAttribute="bottom" id="XNh-kU-wX4"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="414" height="1800"/>
                     <connections>
                         <outlet property="label" destination="nmh-Dc-jE7" id="1gL-7b-yKt"/>
                         <outlet property="segmentedControl" destination="raQ-l1-BN9" id="obL-au-vEa"/>
