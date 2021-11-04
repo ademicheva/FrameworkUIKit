@@ -23,7 +23,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIn-iD-LSM">
-                                <rect key="frame" x="184" y="752" width="46" height="30"/>
+                                <rect key="frame" x="100" y="734" width="214" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="pressedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WS6-He-DhR"/>
@@ -33,8 +34,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="UIn-iD-LSM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="4YI-Sy-xIf"/>
                             <constraint firstItem="uUa-09-bYC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="O4r-78-afd"/>
                             <constraint firstItem="UIn-iD-LSM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TiK-sn-eEd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UIn-iD-LSM" secondAttribute="trailing" constant="100" id="U4q-2w-xYJ"/>
                             <constraint firstItem="uUa-09-bYC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nnB-As-20T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UIn-iD-LSM" secondAttribute="bottom" constant="80" id="rxI-3R-iek"/>
                         </constraints>
