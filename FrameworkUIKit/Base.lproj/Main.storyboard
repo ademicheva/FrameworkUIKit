@@ -22,7 +22,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIn-iD-LSM">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIn-iD-LSM">
                                 <rect key="frame" x="100" y="734" width="214" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Button"/>
@@ -30,21 +30,45 @@
                                     <action selector="pressedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WS6-He-DhR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IX-rZ-bRm">
+                                <rect key="frame" x="100" y="665" width="214" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Action 2"/>
+                                <connections>
+                                    <action selector="pressedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vib-Bv-5Q0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-iX-Upf">
+                                <rect key="frame" x="100" y="597" width="214" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Action 1"/>
+                                <connections>
+                                    <action selector="pressedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xck-sA-tX6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="3IX-rZ-bRm" firstAttribute="top" secondItem="FCh-iX-Upf" secondAttribute="bottom" constant="20" id="3ax-ke-7Wa"/>
                             <constraint firstItem="UIn-iD-LSM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="4YI-Sy-xIf"/>
+                            <constraint firstItem="FCh-iX-Upf" firstAttribute="leading" secondItem="3IX-rZ-bRm" secondAttribute="leading" id="97D-1f-iK8"/>
+                            <constraint firstItem="UIn-iD-LSM" firstAttribute="top" secondItem="3IX-rZ-bRm" secondAttribute="bottom" constant="21" id="FyX-Kx-mD1"/>
                             <constraint firstItem="uUa-09-bYC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="O4r-78-afd"/>
                             <constraint firstItem="UIn-iD-LSM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TiK-sn-eEd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UIn-iD-LSM" secondAttribute="trailing" constant="100" id="U4q-2w-xYJ"/>
+                            <constraint firstItem="FCh-iX-Upf" firstAttribute="leading" secondItem="UIn-iD-LSM" secondAttribute="leading" id="jxc-bY-h9P"/>
                             <constraint firstItem="uUa-09-bYC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nnB-As-20T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UIn-iD-LSM" secondAttribute="bottom" constant="80" id="rxI-3R-iek"/>
+                            <constraint firstItem="3IX-rZ-bRm" firstAttribute="width" secondItem="UIn-iD-LSM" secondAttribute="width" id="tby-aU-7WF"/>
+                            <constraint firstItem="3IX-rZ-bRm" firstAttribute="width" secondItem="FCh-iX-Upf" secondAttribute="width" id="yzh-Nt-tkt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="UIn-iD-LSM" id="Kqm-3I-GQW"/>
                         <outlet property="label" destination="uUa-09-bYC" id="DsC-g9-4hR"/>
+                        <outletCollection property="actionButtons" destination="FCh-iX-Upf" collectionClass="NSMutableArray" id="dPA-35-6vA"/>
+                        <outletCollection property="actionButtons" destination="3IX-rZ-bRm" collectionClass="NSMutableArray" id="yGn-Kl-O0B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
