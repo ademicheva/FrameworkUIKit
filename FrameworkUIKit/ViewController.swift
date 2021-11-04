@@ -11,6 +11,9 @@ class ViewController: UIViewController {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var label: UILabel!
     @IBOutlet var slider: UISlider!
+    @IBOutlet var datePicker: UIDatePicker!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,8 @@ class ViewController: UIViewController {
         slider.minimumTrackTintColor = .yellow
         slider.maximumTrackTintColor = .red
         slider.thumbTintColor = .blue
+        
+        datePicker.locale = Locale(identifier: "ru_RU")
         
     }
 
@@ -65,5 +70,26 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func changeDate(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        let dateValue = dateFormatter.string(from: sender.date)
+        
+        label.text = dateValue
+    }
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
 
