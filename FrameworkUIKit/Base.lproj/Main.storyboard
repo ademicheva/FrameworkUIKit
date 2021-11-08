@@ -41,10 +41,14 @@ The appearance of the keyboard itself can be customized using the properties pro
                                     <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hli-u0-uhG"/>
                                 </connections>
                             </stepper>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="EBz-Ek-Xnb">
+                                <rect key="frame" x="199" y="448" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
+                            <constraint firstItem="EBz-Ek-Xnb" firstAttribute="centerX" secondItem="Jpr-XT-Y0O" secondAttribute="centerX" id="3se-L3-z0a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S5z-Cs-bmS" secondAttribute="trailing" constant="30" id="8Uk-Ve-ckW"/>
                             <constraint firstItem="S5z-Cs-bmS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="290" id="BMY-4K-OKP"/>
                             <constraint firstItem="Jpr-XT-Y0O" firstAttribute="top" secondItem="S5z-Cs-bmS" secondAttribute="bottom" constant="-1" id="GqP-qE-auC"/>
@@ -55,11 +59,13 @@ The appearance of the keyboard itself can be customized using the properties pro
                             <constraint firstItem="9EH-6M-4RT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="eEf-qw-T2y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jpr-XT-Y0O" secondAttribute="bottom" constant="96" id="h6Y-ob-FgR"/>
                             <constraint firstItem="9EH-6M-4RT" firstAttribute="width" secondItem="Jpr-XT-Y0O" secondAttribute="width" multiplier="0.12" constant="295" id="j5D-s1-5jv"/>
+                            <constraint firstItem="EBz-Ek-Xnb" firstAttribute="centerY" secondItem="Jpr-XT-Y0O" secondAttribute="centerY" id="lcy-rM-6vm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jpr-XT-Y0O" secondAttribute="trailing" constant="30" id="t7Y-AI-Uyr"/>
                             <constraint firstItem="S5z-Cs-bmS" firstAttribute="top" secondItem="9EH-6M-4RT" secondAttribute="bottom" constant="8" symbolic="YES" id="xqt-80-Ver"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="EBz-Ek-Xnb" id="qgp-Xp-JIk"/>
                         <outlet property="bottomConstraint" destination="h6Y-ob-FgR" id="l9A-qI-f47"/>
                         <outlet property="countLabel" destination="9EH-6M-4RT" id="fOI-Fz-alE"/>
                         <outlet property="steppr" destination="S5z-Cs-bmS" id="abC-m6-ZyO"/>

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var textView: UITextView!
     @IBOutlet var steppr: UIStepper!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
 //    @IBOutlet var bottomConstraint: NSLayoutConstraint! //
     
@@ -29,7 +30,8 @@ class ViewController: UIViewController {
         
         // MARK: TextView
         
-       // textView.text = ""
+        textView.isHidden = true
+        textView.alpha  = 0 // прозрачность текст
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         // http://iosfonts.com/ сайт, где представлены все шрифты
@@ -49,6 +51,17 @@ class ViewController: UIViewController {
         steppr.backgroundColor = .gray
         steppr.layer.cornerRadius = 5
         
+        //MARK: Activity indicator
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        activityIndicator.startAnimating() // после этого еще нужно задать базовую анимацию
+        
+        // метод, который запрещает взаимодействовать с другими элементами
+        //UIApplication.shared.beginIgnoringInteractionEvents()
+        //userInteractionEnabled
+      //  UIApplication.userintera
+        self.view.isUserInteractionEnabled = false ////////// запрещает воздействие с экраном
+        
         
         
         // зарегистрируем 2х наблюдателей
@@ -57,6 +70,20 @@ class ViewController: UIViewController {
 // UIKeyboardWIllChangeFrame когда клавиатура поменяет ....
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        UIView.animate(withDuration: 0, delay: 3, options: .curveEaseIn, animations: {
+            self.textView.alpha = 1
+        }){ (finished) in
+            self.activityIndicator.stopAnimating()
+            self.textView.isHidden = false
+            self.view.isUserInteractionEnabled = true ///////// разрешает воздействие с экраном
+        }
+    // withDuration - продолжительность анимации и определяет
+    // delay - задержка, которая определяет интервал до появления тектста
+        // options - тут необходимо выбрать анимацию но в нашем случае разчицы нет
+        // animations - тут мы должны указат, что мы анимируем. В нашем случае сделаем анимацию
+    
+    
     }
     
     
