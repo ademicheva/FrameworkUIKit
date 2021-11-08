@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet var textView: UITextView!
     @IBOutlet var steppr: UIStepper!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var progressView: UIProgressView!
     
 //    @IBOutlet var bottomConstraint: NSLayoutConstraint! //
     
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
         // MARK: TextView
         
         textView.isHidden = true
-        textView.alpha  = 0 // прозрачность текст
+       
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         // http://iosfonts.com/ сайт, где представлены все шрифты
@@ -63,6 +64,8 @@ class ViewController: UIViewController {
         self.view.isUserInteractionEnabled = false ////////// запрещает воздействие с экраном
         
         
+        progressView.setProgress(0, animated: true)
+        
         
         // зарегистрируем 2х наблюдателей
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -71,12 +74,18 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        UIView.animate(withDuration: 0, delay: 3, options: .curveEaseIn, animations: {
-            self.textView.alpha = 1
-        }){ (finished) in
-            self.activityIndicator.stopAnimating()
-            self.textView.isHidden = false
-            self.view.isUserInteractionEnabled = true ///////// разрешает воздействие с экраном
+
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            if self.progressView.progress != 1 {
+                self.progressView.progress += 0.2
+            } else {
+                self.activityIndicator.stopAnimating()
+                self.textView.isHidden = false
+                self.view.isUserInteractionEnabled = true
+                self.progressView.isHidden = true
+                
+            }
         }
     // withDuration - продолжительность анимации и определяет
     // delay - задержка, которая определяет интервал до появления тектста
