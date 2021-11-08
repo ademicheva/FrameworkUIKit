@@ -35,10 +35,19 @@ The appearance of the keyboard itself can be customized using the properties pro
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="S5z-Cs-bmS">
+                                <rect key="frame" x="290" y="119" width="94" height="32"/>
+                                <connections>
+                                    <action selector="sizeFont:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hli-u0-uhG"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S5z-Cs-bmS" secondAttribute="trailing" constant="30" id="8Uk-Ve-ckW"/>
+                            <constraint firstItem="S5z-Cs-bmS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="290" id="BMY-4K-OKP"/>
+                            <constraint firstItem="Jpr-XT-Y0O" firstAttribute="top" secondItem="S5z-Cs-bmS" secondAttribute="bottom" constant="-1" id="GqP-qE-auC"/>
                             <constraint firstItem="Jpr-XT-Y0O" firstAttribute="top" secondItem="9EH-6M-4RT" secondAttribute="bottom" constant="39" id="Ns8-1d-Yg2"/>
                             <constraint firstItem="Jpr-XT-Y0O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="OPm-ib-R1L"/>
                             <constraint firstItem="9EH-6M-4RT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="W0b-xH-yUC"/>
@@ -47,11 +56,13 @@ The appearance of the keyboard itself can be customized using the properties pro
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jpr-XT-Y0O" secondAttribute="bottom" constant="96" id="h6Y-ob-FgR"/>
                             <constraint firstItem="9EH-6M-4RT" firstAttribute="width" secondItem="Jpr-XT-Y0O" secondAttribute="width" multiplier="0.12" constant="295" id="j5D-s1-5jv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jpr-XT-Y0O" secondAttribute="trailing" constant="30" id="t7Y-AI-Uyr"/>
+                            <constraint firstItem="S5z-Cs-bmS" firstAttribute="top" secondItem="9EH-6M-4RT" secondAttribute="bottom" constant="8" symbolic="YES" id="xqt-80-Ver"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="h6Y-ob-FgR" id="l9A-qI-f47"/>
                         <outlet property="countLabel" destination="9EH-6M-4RT" id="fOI-Fz-alE"/>
+                        <outlet property="steppr" destination="S5z-Cs-bmS" id="abC-m6-ZyO"/>
                         <outlet property="textView" destination="Jpr-XT-Y0O" id="uti-LT-xWk"/>
                     </connections>
                 </viewController>

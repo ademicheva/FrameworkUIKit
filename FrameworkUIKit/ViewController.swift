@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var textView: UITextView!
+    @IBOutlet var steppr: UIStepper!
     
 //    @IBOutlet var bottomConstraint: NSLayoutConstraint! //
     
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
         
         // MARK: TextView
         
-        textView.text = ""
+       // textView.text = ""
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         // http://iosfonts.com/ сайт, где представлены все шрифты
@@ -36,6 +37,19 @@ class ViewController: UIViewController {
         textView.backgroundColor = self.view.backgroundColor
         // скругляем углы
         textView.layer.cornerRadius = 10
+        
+        
+        
+        // MARK: Stepper
+        steppr.value = 17 // 'то нужно устанавливать так как при нажатии на + шрифт станет 1 
+        steppr.minimumValue = 10
+        steppr.maximumValue = 25
+        
+        steppr.tintColor = .white
+        steppr.backgroundColor = .gray
+        steppr.layer.cornerRadius = 5
+        
+        
         
         // зарегистрируем 2х наблюдателей
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -83,7 +97,18 @@ class ViewController: UIViewController {
     }
     
     // Для того чтобы можно было менять наш цвет текствб. нужно назначить наш класс делегатом текстВью и подписаться под протокол. В этом случае будут доступны методы работы с ЮаТекстВЬю, которые будут отслеживать начало и окончание редактирования текста
-
+    
+    @IBAction func sizeFont(_ sender: UIStepper) {
+        
+        // создадим font, которой присвоим значение текущего шрифта
+        let font = textView.font?.fontName
+        
+        // создадим константу, которой присвоим иазмер шрифта
+        let fontSize = CGFloat(sender.value) // приводим к этому типу
+        
+        textView.font = UIFont(name: font!, size: fontSize)
+    }
+    
   
 
 }
@@ -102,9 +127,9 @@ extension ViewController: UITextViewDelegate {
     }
     
     // gjpdjkztn ddjlbnm yfv d gjkt jghtltktyyjt rjkbxtcndj cbvdjkjd
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        countLabel.text = "\(textView.text.count)"
-        return textView.text.count + (text.count - range.length) <= 60
-    }
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        countLabel.text = "\(textView.text.count)"
+//        return textView.text.count + (text.count - range.length) <= 60
+//    }
     //range.length == backspacee
 }
